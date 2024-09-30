@@ -1,0 +1,17 @@
+fastapi
+uvicorn
+pandas
+tiktoken
+azure-identity
+azure-search-documents
+azure-core
+numpy
+gremlinpython
+azure-cosmos
+aiohttp
+async_timeout
+pydantic
+python-dotenv
+openai
+fastparquet
+pyarrow

@@ -1,0 +1,17 @@
+.env
+__pycache__/
+.venv
+.vscode
+__pycache__
+.vscode/
+__queuestore__/
+aiSearch/__pycache__/
+azureOpenAi/__pycache__/
+cosmosDb/__pycache__/
+graphragClient/__pycache__/
+httpModel/__pycache__/
+importParqueueFile/__pycache__/
+*.json
+__queuestore__
+__queuestorage__
+__pycache__
