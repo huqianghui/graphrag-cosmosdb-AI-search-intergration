@@ -46,7 +46,7 @@ async def chat_completions(request: ChatCompletionRequest):
 
 
 @app.get("/v1/import")
-async def chat_completions():
+async def import():
     response = await import_parquet_files()
     return JSONResponse(content={"message": response})
 
