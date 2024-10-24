@@ -16,6 +16,13 @@ from importParqueFiles.importGraphragFile import import_parquet_files
 # Set up logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
+import os
+
+from dotenv import load_dotenv
+
+# 加载 .env 文件
+load_dotenv()
+
 
 app = FastAPI()
 
@@ -46,7 +53,7 @@ async def chat_completions(request: ChatCompletionRequest):
 
 
 @app.get("/v1/import")
-async def import():
+async def chat_completions():
     response = await import_parquet_files()
     return JSONResponse(content={"message": response})
 

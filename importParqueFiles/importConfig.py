@@ -1,1 +1,1 @@
-GRAPHRAG_FOLDER="/XXXX/output/20240909-132339/artifacts"
+GRAPHRAG_FOLDER="/Users/huqianghui/Downloads/graphRAG-OpenWeb-merge-backend/introduction_merged_graphrag/output/20240909-132339/artifacts"

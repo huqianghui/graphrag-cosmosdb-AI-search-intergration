@@ -1,7 +1,9 @@
 import os
 
 from azure.core.credentials import AzureKeyCredential
-from azure.search.documents.aio import SearchClient
+from azure.search.documents import SearchClient as searchClient
+from azure.search.documents.aio import SearchClient as asyncSearchClient
+from azure.search.documents.indexes import SearchIndexClient
 from azure.search.documents.models import QueryType, VectorizedQuery
 from dotenv import load_dotenv
 
@@ -21,11 +23,20 @@ index_name = os.getenv("ai_search_index_name")
 
 
 def get_asyc_search_client():
-    return SearchClient(
+    return asyncSearchClient(
         endpoint=search_endpoint, 
         credential=search_creds, 
         index_name=index_name)
 
+def get_search_client():
+    return searchClient(
+        endpoint=search_endpoint, 
+        credential=search_creds, 
+        index_name=index_name)
+
+def get_index_client():
+    index_client = SearchIndexClient(endpoint=search_endpoint, credential=search_creds)
+    return index_client
 
 async def get_search_top_entities_by_text(query_text)->list[Entity]:
     asycEmbeedingClient = get_embdding_async_client()

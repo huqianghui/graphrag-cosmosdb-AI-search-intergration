@@ -11,6 +11,7 @@ import time
 import numpy as np
 import pandas as pd
 
+from aiSearch.azureAISearchData import upload_entities_to_index
 from cosmosdb.grelinClient import get_client
 
 from .importConfig import GRAPHRAG_FOLDER
@@ -98,6 +99,10 @@ async def entity_text_unit_relation_import_gremlin(df, batch_size=100):
     return total
     
 async def import_entity_parquet():
+    # first，import entity data to AI search
+    await import_entity_parquet_AI_search()
+
+    # second, import entity data to cosmos db
     entity_df = pd.read_parquet(f'{GRAPHRAG_FOLDER}/create_final_entities.parquet',
                             columns=["name","type","description","human_readable_id","id","text_unit_ids"])
     entity_df['vertex_id'] = entity_df['id']
@@ -107,6 +112,17 @@ async def import_entity_parquet():
         else [x] if pd.notnull(x)  
         else []  
     )
+
     total =  await batched_entity_import_gremlin(entity_df)
     await entity_text_unit_relation_import_gremlin(entity_df)
     return total
+
+async def import_entity_parquet_AI_search():
+    entity_df = pd.read_parquet(f'{GRAPHRAG_FOLDER}/create_final_entities.parquet',
+                            columns=["id","name","type","description","human_readable_id","description_embedding"])
+    entity_df['id'] = entity_df['id'].astype(str)
+    entity_df['human_readable_id']=entity_df['human_readable_id'].astype(str)
+    entity_df['description_embedding'] = entity_df['description_embedding'].apply(lambda x: x.tolist() if isinstance(x, np.ndarray) else x)
+    entity_dicts =  entity_df.to_dict(orient='records')
+
+    upload_entities_to_index(entity_dicts)

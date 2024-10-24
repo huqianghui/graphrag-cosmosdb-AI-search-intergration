@@ -1,5 +1,5 @@
 from dataclasses import asdict, dataclass
-from typing import List
+from typing import List, Optional
 
 
 @dataclass
@@ -9,3 +9,5 @@ class Entity:
     description: str
     type: str
     human_readable_id: str
+    description_embedding: Optional[List[float]]
+    

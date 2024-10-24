@@ -3,7 +3,7 @@ uvicorn
 pandas
 tiktoken
 azure-identity
-azure-search-documents
+azure-search-documents==11.6.0b4
 azure-core
 numpy
 gremlinpython
