@@ -2,6 +2,7 @@
 
 step1) 
 
+config .env file from .env_template and importParqueFiles/importConfig.py
 ### import entity to azure AI search
 
 ![entity_import2_ai_search](./images/entity_import2_ai_search.png)
