@@ -15,3 +15,4 @@ importParqueueFile/__pycache__/
 __queuestore__
 __queuestorage__
 __pycache__
+appConfig.py
