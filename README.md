@@ -4,11 +4,9 @@
 
 a） generate parque files by graphrag
 
-b） config the parque file path in ./importParqueFiles/importConfig.py
+b)   copy .env_template to .env and config the env variables.
 
-c)   copy .env_template to .env and config the env variables.
-
-d)   copy  .appConfig.py_template to .appConfig.py, and config variables.
+c)   copy  .appConfig.py_template to .appConfig.py, and config variables.
 
 d)   start the app by run python app.py 
 
