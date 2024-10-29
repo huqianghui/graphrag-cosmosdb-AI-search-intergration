@@ -8,11 +8,13 @@ b） config the parque file path in ./importParqueFiles/importConfig.py
 
 c)   copy .env_template to .env and config the env variables.
 
+d)   copy  .appConfig.py_template to .appConfig.py, and config variables.
+
 d)   start the app by run python app.py 
 
 e) call the get api: v1/import to import parque files into  AI search and cosmosDB
 
-then you can call api: /v1/chat/completions to get graphrag local search with AI search and cosmosDB
+then you can call api: /v1/localSearch to get graphrag local search with AI search and cosmosDB, and /v1/globalSearch to get global search with AI search and cosmosDB
 
 
 main step screenshot 
