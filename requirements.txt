@@ -15,3 +15,5 @@ python-dotenv
 openai
 fastparquet
 pyarrow
+langchain
+langchain-openai

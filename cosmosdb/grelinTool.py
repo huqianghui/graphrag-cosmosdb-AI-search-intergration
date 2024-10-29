@@ -1,5 +1,6 @@
 from .grelinClient import get_client
 from .grelinQuery import (
+    cosmosDB_community_data_by_level_grelin_query_template,
     cosmosDB_community_grelin_query_template,
     cosmosDB_inside_relation_grelin_query_template,
     cosmosDB_outside_relation_grelin_query_template,
@@ -58,4 +59,8 @@ async def build_context_data_by_entity_ids(entity_ids:str,textUnitCount:int=3,en
     cosmosDB_entity_relation_result = await get_cosmosDB_relation_grelin_query_result(client.submit(cosmosDB_outside_relation_grelin_query).all().result(),client.submit(cosmosDB_inside_relation_grelin_query).all().result())
     return cosmosDB_text_mapping_result + cosmosDB_community_result + cosmosDB_entity_relation_result
 
-     
+async def  get_cosmosDB_community_data_by_level(level:int)->str:
+    client = get_client()
+    cosmosDB_community_grelin_query = cosmosDB_community_data_by_level_grelin_query_template.format(level=level)
+    cosmosDB_community_data_result = client.submit(cosmosDB_community_grelin_query).all().result()
+    return cosmosDB_community_data_result   

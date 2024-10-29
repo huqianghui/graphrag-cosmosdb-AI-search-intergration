@@ -6,9 +6,9 @@ import nest_asyncio
 import numpy as np
 import pandas as pd
 
+from appConfig import GRAPHRAG_FOLDER
 from cosmosdb.grelinClient import get_client
 
-from .importConfig import GRAPHRAG_FOLDER
 from .importParqueGremlinQuery import entity_realtion_import_grelin_query
 
 

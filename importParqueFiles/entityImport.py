@@ -12,9 +12,9 @@ import numpy as np
 import pandas as pd
 
 from aiSearch.azureAISearchData import upload_entities_to_index
+from appConfig import GRAPHRAG_FOLDER
 from cosmosdb.grelinClient import get_client
 
-from .importConfig import GRAPHRAG_FOLDER
 from .importParqueGremlinQuery import (
     entity_import_gremlin_query,
     entity_text_unit_relation_gremin_query,

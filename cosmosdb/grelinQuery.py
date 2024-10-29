@@ -66,3 +66,15 @@ g.V({entity_ids})
  .select('descriptionText')
 '''
 
+# get max level of communities
+cosmosDB_max_community_level_grelin_query = '''
+g.V().hasLabel('__Community__')
+     .values('level')
+     .max()
+'''
+# get community data by level
+cosmosDB_community_data_by_level_grelin_query_template = '''
+g.V().hasLabel('__Community__')
+     .has('level', {level})
+     .values('full_content')
+'''

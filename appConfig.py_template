@@ -1,0 +1,22 @@
+import os
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# Set constants and configurations
+INPUT_DIR = os.getenv('INPUT_DIR')
+LANCEDB_URI = f"{INPUT_DIR}/lancedb"
+COMMUNITY_REPORT_TABLE = "create_final_community_reports"
+COMMUNITY_TABLE = "create_final_communities"
+ENTITY_TABLE = "create_final_nodes"
+ENTITY_EMBEDDING_TABLE = "create_final_entities"
+RELATIONSHIP_TABLE = "create_final_relationships"
+COVARIATE_TABLE = "create_final_covariates"
+TEXT_UNIT_TABLE = "create_final_text_units"
+COMMUNITY_LEVEL = 2
+PORT = 8081
+
+GRAPHRAG_FOLDER="/Users/huqianghui/Downloads/graphRAG-OpenWeb-merge-backend/introduction_merged_graphrag/output/20240909-132339/artifacts"
+azure_round_robin_json_list = "[{\"aoai_resource_uri\": \"https://XXX1.azure.com/\", \"aozai_api_key\": \"XXX1\"}, {\"aoai_resource_uri\": \"https://XXXX2.openai.azure.com/\", \"aozai_api_key\": \"XXXX2\"}, {\"aoai_resource_uri\": \"https://XXXX3.openai.azure.com/\", \"aozai_api_key\": \"XXXX3\"}, {\"aoai_resource_uri\": \"https://XXXX4.openai.azure.com/\", \"aozai_api_key\": \"XXXX4\"}]"
+response_type="multiple paragraphs"

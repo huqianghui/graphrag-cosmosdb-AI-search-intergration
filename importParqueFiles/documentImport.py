@@ -6,9 +6,9 @@ import time
 import numpy as np
 import pandas as pd
 
+from appConfig import GRAPHRAG_FOLDER
 from cosmosdb.grelinClient import get_client
 
-from .importConfig import GRAPHRAG_FOLDER
 from .importParqueGremlinQuery import doc_import_gremlin_query
 
 

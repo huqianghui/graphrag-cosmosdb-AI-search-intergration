@@ -7,10 +7,10 @@ import nest_asyncio
 import numpy as np
 import pandas as pd
 
+from appConfig import GRAPHRAG_FOLDER
 from cosmosdb.grelinClient import get_client
 
 from .communityWeightUpdate import update_community_weight_by_entity_count
-from .importConfig import GRAPHRAG_FOLDER
 from .importParqueGremlinQuery import (
     community_finding_import_grelin_query,
     community_having_finding_grelin_query,

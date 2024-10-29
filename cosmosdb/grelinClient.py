@@ -26,7 +26,6 @@ def get_client():
 
 async def run_gremlin_query(gremlin_query: str):
     import nest_asyncio
-
     nest_asyncio.apply()
     client = get_client()  
     try:  
