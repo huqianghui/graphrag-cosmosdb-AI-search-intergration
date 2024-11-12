@@ -13,7 +13,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 load_dotenv(verbose=True)
 
 deployment_name = os.getenv("aoai_llm_deployment_name")
-api_version = os.getenv("aosi_llm_api_version")
+api_version = os.getenv("aoai_llm_api_version")
 
 class AzureOpenAIClientsRoundRobin:
     def __init__(self):
