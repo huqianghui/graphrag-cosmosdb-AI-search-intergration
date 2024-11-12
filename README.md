@@ -21,7 +21,9 @@ main step screenshot
 
 ![entity_import2_ai_search](./images/entity_import2_ai_search.png)
 
-2. import all entity and relation to azure cosmosDB gremlin database graph
+2. import all entity and relation to azure cosmosDB gremlin database graph(cosmosDB's Partition key: vertex_id)
+<img width="1442" alt="Screenshot 2024-11-12 at 8 57 23 AM" src="https://github.com/user-attachments/assets/f7bc4af8-4310-4c47-9e4a-16836bde42ad">
+
 
 ![entity_import2_cosmosdb](./images/entity_import2_cosmosdb.png)
 
