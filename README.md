@@ -2,7 +2,9 @@
 
 **steps**：
 
-a） generate parque files by graphrag
+a） generate parque files by graphrag(refer: https://microsoft.github.io/graphrag/get_started/)
+<img width="787" alt="Screenshot 2024-11-12 at 9 57 06 AM" src="https://github.com/user-attachments/assets/c9feb39f-bb23-4b35-b8af-aa5c30a4151c">
+
 
 b)   copy .env_template to .env and config the env variables.
 
